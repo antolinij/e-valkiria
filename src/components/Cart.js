@@ -20,7 +20,7 @@ export const CartHeader = () => {
 
   return (
     <div>
-        <div className="cartLength"><FaBeer />productos en el carro: {cart.length} </div>
+        <div className="cartLength"><FaBeer />  en el carro: {cart.length} </div>
     </div>
   )
 }
