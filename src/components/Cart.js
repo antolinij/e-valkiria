@@ -37,7 +37,7 @@ export const CartButton = (props) => {
             color="success"
             onClick={props.openCart}
           >
-            REVISAR PEDIDO
+            REVISAR PEDIDO ({cart.length})
           </Button>
         )
     }
