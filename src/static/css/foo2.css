@@ -1,0 +1,29 @@
+.avatar {
+    position: relative;
+    margin-left: 15px;
+    top: 40px;
+    padding-bottom: 20px;
+    z-index: 5000;
+  }
+  .avatar img {
+    padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+    box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  }
+  figure {
+      margin: 0;
+  }
+
+  .tttt {
+      position: relative;
+      padding: 2px;
+      background: #fff;
+      border-radius: 50%;
+      top: -55px;
+  }
+
+  .firulay {
+      padding: 0px;
+  }
