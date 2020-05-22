@@ -48,13 +48,18 @@ export const CartButton = (props) => {
 export const CartDrawer = () => {
     const [cart, setCart] = useContext(CartContext);
     //const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
-  
+    var uri = "https://api.whatsapp.com/send?phone=5492665030860&text=Hola%2c%20quer%c3%ada%20pedir%20"
     const rows = cart.map(( r, i ) => {
         return (
             <List.Item key={i}>Cerveza: {r.name}</List.Item>
         ) 
       })
-
+      
+      for (let key in cart) {
+        uri += cart[key].name + "%20"
+        console.log(key, cart[key]);
+      }
+      console.log(uri)
     return (
     <Box>
     <div>
@@ -66,7 +71,7 @@ export const CartDrawer = () => {
           </List>
         </Box>
         <span>
-            <a target="_blank" href="https://api.whatsapp.com/send?phone=5492665030860&text=Hola%2c%20quer%c3%ada%20pedir estas cervezas%3a%0a%0a%2a%20%5bTotal%3a%20%24250%0a%0aGracias.&source=&data=&app_absent=">PEDIR POR WHATSAPP</a>
+            <a target="_blank" href={uri}>PEDIR POR WHATSAPP</a>
         </span>
         </Section>
     </div>
