@@ -40,7 +40,7 @@ function App() {
         <SlideDrawer show={drawer} />
         { backdrop }
         <HeaderBar/>
-        <Container>
+        <Container className="is-vcentered">
           <ProductList/>
           <CartButton openCart={drawerToggleClickHandler}/>    
         </Container>
