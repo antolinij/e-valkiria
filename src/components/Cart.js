@@ -30,11 +30,11 @@ export const CartButton = (props) => {
     if (cart.length){
         return (
             <Button
-            className="vosboton"
-            renderAs="span"
-            color="success"
-            onClick={props.openCart}
-          >
+              className="vosboton"
+              renderAs="span"
+              color="success"
+              onClick={props.openCart}
+            >
             REVISAR PEDIDO ({cart.length})
           </Button>
         )
@@ -45,35 +45,36 @@ export const CartButton = (props) => {
 
 export const CartDrawer = () => {
     const [cart, setCart] = useContext(CartContext);
-    //const totalPrice = cart.reduce((acc, curr) => console.log("acc: " + acc + " curr " + curr));
+
+    var pedido = "Hola! quería hacer un pedido =), este es el detalle: "
     
-    //const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
-    var uri = "https://api.whatsapp.com/send?phone=5492665030860&text=Hola%2c%20quer%c3%ada%20pedir%20"
+    cart.map((product)=>{
+      pedido += " " +product.quantity +" botella/s de "+ product.name + " - "
+    })
+    pedido += " Muchas gracias Salú "
+    
+    let pedidoEncoded = encodeURI(pedido)
+    
+    var uri = "https://api.whatsapp.com/send?phone=5492665030860&text="+pedidoEncoded
     const rows = cart.map(( r, i ) => {
         return (
             <List.Item key={i}>Cerveza: {r.name} - {r.quantity} </List.Item>
         ) 
       })
-      
-      for (let key in cart) {
-        uri += cart[key].name + "%20"
-      }
     return (
-    <Box>
-    <div>
-      <Section>
-        <strong>Listado de tu Pedido ( {cart.length}) <br/> </strong>
-        <Box>
-          <List hoverable>
-            {rows}
-          </List>
-        </Box>
-        <span>
-            <a target="_blank" href={uri}>PEDIR POR WHATSAPP</a>
-        </span>
+      <Box>
+        <Section>
+            <strong>Listado de tu Pedido ( {cart.length}) <br/> </strong>
+            <Box>
+              <List hoverable>
+                {rows}
+              </List>
+            </Box>
+            <span>
+                <a target="_blank" href={uri}>PEDIR POR WHATSAPP</a>
+            </span>
         </Section>
-    </div>
-    </Box>
+      </Box>
     )
 }
 

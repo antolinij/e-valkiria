@@ -8,8 +8,9 @@ const SlideDrawer = (props) => {
           drawerClasses = 'side-drawer open'
             return(
                 <div className={drawerClasses}>
-                    <div className="something">PRUEBA</div>
+                    
                     <CartDrawer/>
+                    
                 </div>
                 )
             }

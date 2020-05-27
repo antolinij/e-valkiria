@@ -2,6 +2,7 @@ import React, { useContext, useState, useRef, useEffect } from 'react'
 import { Tile } from 'react-bulma-components'
 import Heading from 'react-bulma-components/lib/components/heading';
 import Image from 'react-bulma-components/lib/components/image';
+import Columns from 'react-bulma-components/lib/components/columns';
 import List from 'react-bulma-components/lib/components/list';
 import '../static/sass/ProductItem.scss'
 
@@ -13,6 +14,7 @@ function ProductItem(props) {
     const [cart, setCart] = useContext(CartContext);
     const [myState, _setMyState] = useState(0)
 
+    const style = { textAlign: 'center' }
     const myStateRef = useRef(myState)
 
     const setMyState = data => {
@@ -24,11 +26,6 @@ function ProductItem(props) {
         console.log('state in handler' + myStateRef.current)
     }
 
-    /*
-    useEffect(() => {
-        window.addEventListener('click', listener)
-    })
-    */
     function updateToCart(item, action){
         const ndx = cart.findIndex(e => e.id === item.id);
 
@@ -49,20 +46,32 @@ function ProductItem(props) {
                     cart[ndx]['quantity'] = myStateRef.current
                     return 
             }
-
-
         }
     }
     return (
         <Tile className="box" size={4} renderAs="article" kind="child">
-            <Heading>{props.product.name}</Heading>
-            <Heading subtitle>{props.product.description}</Heading>
+            <Columns style={style}>
+                <Columns.Column>
+                    <Heading>{props.product.name}</Heading>
+                    <Heading subtitle>{props.product.description}</Heading>
+                </Columns.Column>
+            </Columns>
             <Image src="birra.jpg" />
-            <div className="actions">
-                <button className="button is-rounded is-small" disabled={!props.product.quantity} onClick={() => updateToCart(props.product, 'remove')}><FaMinus/></button>
-                <small>{props.product.quantity?' '+props.product.quantity+' ':' 0 '}</small>
-                <button className="button is-rounded is-small" onClick={()=> updateToCart(props.product, 'add')}><FaPlus/></button>
-            </div>
+            <Columns style={style}>
+                <Columns.Column>
+                    <p>$150 x unidad</p>
+                </Columns.Column>
+                <Columns.Column>
+                    <div className="actions">
+                        <button className="button is-rounded is-small" disabled={!props.product.quantity} onClick={() => updateToCart(props.product, 'remove')}><FaMinus/></button>
+                        <small>{props.product.quantity?' '+props.product.quantity+' ':' 0 '}</small>
+                        <button className="button is-rounded is-small" onClick={()=> updateToCart(props.product, 'add')}><FaPlus/></button>
+                    </div>
+                </Columns.Column>
+                <Columns.Column>
+                    <p className="bd-notification is-success"><small>*unidad referencia <br/> botella 500ml</small></p>
+                </Columns.Column>
+            </Columns>
         </Tile>
     )
 }

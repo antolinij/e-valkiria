@@ -1,23 +1,15 @@
 @import "bulma/sass/utilities/mixins";
 
-.something {
-    @include until($desktop) {
-        color: red;
-    }
-
-    @include from($tablet) {
-        color: green;
-      }
-}
-
  .side-drawer { 
+   position: fixed;
     height: 100%;
     background: white;
-    position: fixed;
     top: 0;
     right: 0;
     @include until($desktop) {
       width: 90%;
+      position: fixed;
+      top: 40%;
     }
     @include from($tablet) {
       width: 50%;
@@ -28,5 +20,8 @@
     transition: transform 0.6s ease-out;
  }
  .side-drawer.open {
+    margin-right: 20px;
+    right: 10px;
+    border-radius: 25px;
     transform: translateX(0);
  }
