@@ -1,5 +1,5 @@
 import React from 'react'
-import '../static/css/SlideDrawer.css';
+import '../static/sass/SlideDrawer.scss';
 import {CartDrawer } from './Cart';
 
 const SlideDrawer = (props) => {
@@ -8,6 +8,7 @@ const SlideDrawer = (props) => {
           drawerClasses = 'side-drawer open'
             return(
                 <div className={drawerClasses}>
+                    <div className="something">PRUEBA</div>
                     <CartDrawer/>
                 </div>
                 )
