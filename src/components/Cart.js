@@ -27,6 +27,14 @@ export const CartButton = (props) => {
     const [cart, setCart] = useContext(CartContext);
     //const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
   
+    let price = 0
+    cart.map((product) => {
+      console.log(product)
+      price += product.quantity * product.price
+    
+    })
+    console.log(price)
+
     if (cart.length){
         return (
             <Button
@@ -35,7 +43,7 @@ export const CartButton = (props) => {
               color="success"
               onClick={props.openCart}
             >
-            REVISAR PEDIDO ({cart.length})
+            ({cart.length})  REVISAR PEDIDO [${price}]
           </Button>
         )
     }

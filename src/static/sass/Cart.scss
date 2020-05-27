@@ -7,7 +7,7 @@
     margin-right: 30%;
 
     @include until($desktop) {
-        left: 0%;
+        left: -5%;
     }
     @include from($tablet) {
         left: 15%;
