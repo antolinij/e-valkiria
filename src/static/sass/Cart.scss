@@ -13,3 +13,20 @@
         left: 15%;
     }
 }
+
+.wabutton{
+    position: fixed;
+    @include until($desktop) {
+        top: 80%; 
+        left: 33%;
+    }
+    @include from($tablet) {
+        bottom: 10%;
+        left: 40%;
+    }
+}
+
+.listProducts{
+    text-align: left;
+    margin-left: 0px;
+}

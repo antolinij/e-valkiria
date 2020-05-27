@@ -22,7 +22,7 @@ const HeaderBar = (props) => {
                 </Media.Item>
                 <Media.Item position="center">
                     <p>
-                    <strong>Valkiria La Fabria</strong>
+                    <strong>Valkiria La Fabrica</strong>
                     </p>
                 </Media.Item>
                 <Media.Item position="right">

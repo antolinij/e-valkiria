@@ -16,8 +16,6 @@ import './static/css/App.css';
 //import './App.sass';
 import './static/sass/Cart.scss';
 
-const style = { textAlign: 'center' };
-
 function App() {
   const [drawer, setDrawer] = useState(false);
 

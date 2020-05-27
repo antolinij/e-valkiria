@@ -9,8 +9,9 @@ import Box from 'react-bulma-components/lib/components/box';
 import List from 'react-bulma-components/lib/components/list';
 
 import { FaBeer } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
 
-import '../static/css/Cart.css';
+import '../static/sass/Cart.scss';
 
 export const CartHeader = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -43,7 +44,7 @@ export const CartButton = (props) => {
               color="success"
               onClick={props.openCart}
             >
-            ({cart.length})  REVISAR PEDIDO [${price}]
+            ({cart.length}) REVISAR PEDIDO [${price}]
           </Button>
         )
     }
@@ -53,7 +54,7 @@ export const CartButton = (props) => {
 
 export const CartDrawer = () => {
     const [cart, setCart] = useContext(CartContext);
-
+    const style = { textAlign: 'center' };
     var pedido = "Hola! quería hacer un pedido =), este es el detalle: "
     
     cart.map((product)=>{
@@ -66,23 +67,23 @@ export const CartDrawer = () => {
     var uri = "https://api.whatsapp.com/send?phone=5492665030860&text="+pedidoEncoded
     const rows = cart.map(( r, i ) => {
         return (
-            <List.Item key={i}>Cerveza: {r.name} - {r.quantity} </List.Item>
+          <div className="listProducts">
+            <List.Item key={i}>Cerveza Estilo: {r.name} - Cantidad: {r.quantity} - Precio: {r.price}</List.Item>
+          </div>
         ) 
       })
     return (
-      <Box>
-        <Section>
-            <strong>Listado de tu Pedido ( {cart.length}) <br/> </strong>
+        <Section style={style}>
+            <strong>TU PEDIDO ( {cart.length} ) <br/> </strong>
             <Box>
               <List hoverable>
                 {rows}
               </List>
             </Box>
-            <span>
-                <a target="_blank" href={uri}>PEDIR POR WHATSAPP</a>
+            <span className="wabutton">
+                <a target="_blank" href={uri}><FaWhatsapp/> PEDIR POR WHATSAPP</a>
             </span>
-        </Section>
-      </Box>
+        </Section>  
     )
 }
 
