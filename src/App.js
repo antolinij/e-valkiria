@@ -14,6 +14,7 @@ import ProductList from './components/ProductList';
 
 import './static/css/App.css';
 //import './App.sass';
+import './static/sass/Cart.scss';
 
 const style = { textAlign: 'center' };
 

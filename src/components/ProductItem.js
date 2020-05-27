@@ -59,7 +59,7 @@ function ProductItem(props) {
             <Image src="birra.jpg" />
             <Columns style={style}>
                 <Columns.Column>
-                    <p>$150 x unidad</p>
+                    <p>$100 x unidad</p>
                 </Columns.Column>
                 <Columns.Column>
                     <div className="actions">

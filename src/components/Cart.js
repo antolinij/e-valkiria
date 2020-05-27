@@ -30,7 +30,7 @@ export const CartButton = (props) => {
     if (cart.length){
         return (
             <Button
-              className="vosboton"
+              className="button-cart"
               renderAs="span"
               color="success"
               onClick={props.openCart}

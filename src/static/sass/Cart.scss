@@ -1,0 +1,15 @@
+@import "bulma/sass/utilities/mixins";
+
+.button-cart{ 
+    position: fixed;
+    bottom: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+
+    @include until($desktop) {
+        left: 0%;
+    }
+    @include from($tablet) {
+        left: 15%;
+    }
+}
