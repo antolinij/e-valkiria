@@ -1,7 +1,9 @@
+.section {
+    overflow: visible;
+  }
 .section{
     padding: 0px;
 }
-
 .image.is-3by1 {
     padding-top: 31%;
 }
