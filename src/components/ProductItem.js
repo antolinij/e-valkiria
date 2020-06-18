@@ -12,7 +12,7 @@ import { CartContext } from '../context/CartContext';
 function ProductItem(props) {
     const [state, dispatch] = useContext(CartContext)
 
-    const addToCart = (product) => {
+    let addToCart = (product) => {
         product.quantity += 1
         dispatch({
             type: 'ADD',
@@ -33,7 +33,6 @@ function ProductItem(props) {
     }
 
     const style = { textAlign: 'center' }
-    
    return (
         <Tile className="box" size={4} renderAs="article" kind="child">
             <Columns style={style}>
@@ -57,13 +56,13 @@ function ProductItem(props) {
                         <button className="button is-rounded is-small" disabled={!props.product.quantity} onClick={() => removeToCart(props.product)}>-</button>
                         <small>{props.product.quantity?' '+props.product.quantity+' ':' 0 '}</small>
                         <Button
-                            className="button is-rounded is-small"
-                            renderAs="span"
-                            color="success"
-                            onClick={() => addToCart(props.product)}
-                            >
-                            +
-                        </Button>
+                    className="button is-rounded is-small"
+                    renderAs="span"
+                    color="success"
+                    onClick={addToCart.bind(null, props.product)}
+                >
+                +
+                </Button>
                     </div>
                 </Columns.Column>
                 <Columns.Column>
