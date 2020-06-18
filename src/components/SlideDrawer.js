@@ -13,14 +13,10 @@ const SlideDrawer = (props) => {
        let drawerClasses = 'side-drawer'
        const style = { textAlign: 'center' };
        if(props.show) {
-          drawerClasses = 'side-drawer open'
+          drawerClasses = 'side-drawer open has-text-centered'
             return(
                 <div className={drawerClasses}>
-                    <Hero className="foo" color="info" >
-                        <Hero.Head renderAs="header">
-                        <Image className="checkout" rounded={boolean('rounded', true)} size={64} alt="64x64" src="valkirialogo.jpg" />
-                        </Hero.Head>
-                    </Hero>
+                    <Image className="image-checkout" rounded={boolean('rounded', true)} size={64} alt="64x64" src="valkirialogo.jpg" />
                     <CartDrawer/>
                 </div>
                 )

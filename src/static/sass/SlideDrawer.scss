@@ -4,12 +4,17 @@
    position: fixed;
     height: 100%;
     background: white;
-    top: 0;
     right: 0;
-    @include until($desktop) {
-      width: 90%;
+    align-items: center;
+    justify-content: center;
+    @include mobile {
+      margin: 0px;
+      width: 100%;
+      height: 100%;
+    }
+    @include from ($tablet) until($desktop) {
+      width: 75%;
       position: fixed;
-      top: 10%;
     }
     @include from($tablet) {
       width: 50%;
@@ -20,15 +25,11 @@
     transition: transform 0.6s ease-out;
  }
  .side-drawer.open {
-    margin-right: 20px;
-    right: 10px;
-    border-radius: 25px;
     transform: translateX(0);
  }
- .checkout{
-    position: relative;
-    left: 45%;
-}  
-.foo{
-  border-radius: 10px;
+ .image-checkout{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }

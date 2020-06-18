@@ -1,13 +1,13 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 
 import SlideDrawer from './components/SlideDrawer';
-import Backdrop from './components/Backdrop';
 import HeaderBar from './components/HeaderBar';
+import Home from './components/Home';
 import NavBar from './components/NavBar';
 import Container from 'react-bulma-components/lib/components/container';
 
+import axios from 'axios';
 
-import { CartProvider } from './components/CartContext';
 import { CartHeader, CartButton} from './components/Cart';
 
 import ProductList from './components/ProductList';
@@ -17,31 +17,67 @@ import './static/css/App.css';
 import './static/sass/Cart.scss';
 
 function App() {
-  const [drawer, setDrawer] = useState(false);
+  const [data, setData] = useState({ products: [
+      {
+          id: 1,
+          name: 'Pale Ale Especial Edition',
+          description: '5.8% ABV - 18 SRM - 40 IBUs',
+          price: 100,
+          stock: 4,
+          quantity: 0,
+      },
+      {
+          id: 2,
+          name: 'Session Pale 01 - Proyecto Cuarentena',
+          description: '4.1% ABV, 7 SRM - 51 IBUs',
+          price: 100,
+          stock: 6,
+          quantity: 0,
+      },
+      {
+          id: 3,
+          name: 'English Red IPA',
+          description: '5.5% ABV - 15 SRM - 52 IBUs',
+          price: 100,
+          stock: 9,
+          quantity: 0,
+      },
+      {
+          id: 4,
+          name: 'Golden Ale - Proyecto Cuarentena',
+          description: '4.9% ABV - 4 SRM - 28 IBUs',
+          price: 100,
+          stock: 0,
+          quantity: 0,
+      },
+      {
+          id: 5,
+          name: 'Session IPA',
+          description: '4.5% ABV - 6 SRM - 38 IBUs',
+          price: 100,
+          stock: 3,
+          quantity: 0,
+      },
+    ] 
+  });
+  
+  /*
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        'https://hn.algolia.com/api/v1/search?query=python',
+      );
+      console.log(result)
+      setData(result.data);
+    };
+ 
+    fetchData();
+  }, []);
+  */
 
-  const drawerToggleClickHandler = () => {
-    setDrawer( !drawer )
-  }
-
-  const backdropClickHandler = () => {
-    setDrawer( false )
-  }
-
-  let backdrop;
-  if(drawer){
-    backdrop = <Backdrop close={backdropClickHandler} />;
-   }
-   
   return (
     <div>
-      <CartProvider>
-        <NavBar openCart={drawerToggleClickHandler} />
-        <SlideDrawer show={drawer} />
-        { backdrop }
-        <HeaderBar/>
-        <ProductList/>
-        <CartButton openCart={drawerToggleClickHandler}/>    
-      </CartProvider>
+      <Home products={data.products}/>
     </div>
   );
 }
