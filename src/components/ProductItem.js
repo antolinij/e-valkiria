@@ -12,7 +12,7 @@ import { CartContext } from '../context/CartContext';
 function ProductItem(props) {
     const [state, dispatch] = useContext(CartContext)
 
-    const addToCart = product => {
+    const addToCart = (product) => {
         product.quantity += 1
         dispatch({
             type: 'ADD',
@@ -60,7 +60,7 @@ function ProductItem(props) {
                             className="button is-rounded is-small"
                             renderAs="span"
                             color="success"
-                            onClick={addToCart(props.product)}
+                            onClick={() => addToCart(props.product)}
                             >
                             +
                         </Button>
