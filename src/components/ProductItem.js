@@ -29,7 +29,10 @@ function ProductItem(props) {
     }
 
     const foo = () => {
-        console.log("hiciste clic en FOO")
+        dispatch({
+            type: 'FOO',
+            payload: {product: {'id': 1}}
+        })
     }
 
     const style = { textAlign: 'center' }
@@ -48,19 +51,19 @@ function ProductItem(props) {
                 </Columns.Column>
                 <Columns.Column>
                 <Button
-                renderAs="span"
-                color="success"
-                onClick={foo}
-                >Hago Clic en Foo</Button>
+                    renderAs="span"
+                    color="success"
+                    onClick={foo}
+                >Hago Clic en Foo
+                </Button>
                     <div className="actions">
                         <button className="button is-rounded is-small" disabled={!props.product.quantity} onClick={() => removeToCart(props.product)}>-</button>
                         <small>{props.product.quantity?' '+props.product.quantity+' ':' 0 '}</small>
                         <Button
-                    className="button is-rounded is-small"
-                    renderAs="span"
-                    color="success"
-                    onClick={addToCart.bind(null, props.product)}
-                >
+                            className="button is-rounded is-small"
+                            renderAs="span"
+                            onClick={() => addToCart(props.product)}
+                        >
                 +
                 </Button>
                     </div>

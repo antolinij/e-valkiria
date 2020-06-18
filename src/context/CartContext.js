@@ -39,6 +39,12 @@ const reducer = (state, action) => {
             quantityTotal: state.quantityTotal - 1,
             priceTotal: Math.round((state.priceTotal - productRemoved.price) * 100) / 100
         }
+    case 'FOO':
+        return {
+            cart: [...state.cart],
+            quantityTotal: state.quantityTotal + 1,
+            priceTotal: Math.round((state.priceTotal + 2) * 100) / 100
+        }
     default: 
         throw new Error()
     }
