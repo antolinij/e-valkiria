@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useState,useContext} from 'react';
 import {CartContext} from '../context/CartContext';
 
 import Hero from 'react-bulma-components/lib/components/hero';
@@ -10,6 +10,8 @@ import List from 'react-bulma-components/lib/components/list';
 
 import { FaBeer } from 'react-icons/fa';
 import { FaWhatsapp } from 'react-icons/fa';
+
+import Backdrop from '../views/Backdrop';
 
 import '../static/sass/Cart.scss';
 
@@ -60,6 +62,7 @@ export const CartDrawer = () => {
     let pedidoEncoded = encodeURI(pedido)
     
     var uri = "https://api.whatsapp.com/send?phone=5492665030860&text="+pedidoEncoded
+    
     const rows = state.cart.map(( r, i ) => {
         return (
           <div className="listProducts" key={i}>
@@ -69,7 +72,7 @@ export const CartDrawer = () => {
       })
     return (
         <Section style={style}>
-            <strong>TU PEDIDO ( {state.cart.length} ) <br/> </strong>
+            <strong>TU PEDIDO ( {state.quantityTotal} ) <br/> </strong>
             <Box>
               <List hoverable>
                 {rows}
