@@ -1,6 +1,7 @@
 @import "bulma/sass/utilities/mixins";
 * {
     touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 .button-cart{ 
     position: fixed;
