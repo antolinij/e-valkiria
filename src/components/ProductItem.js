@@ -56,7 +56,14 @@ function ProductItem(props) {
                     <div className="actions">
                         <button className="button is-rounded is-small" disabled={!props.product.quantity} onClick={() => removeToCart(props.product)}>-</button>
                         <small>{props.product.quantity?' '+props.product.quantity+' ':' 0 '}</small>
-                        <button className="button is-rounded is-small" onClick={()=> addToCart(props.product)}>+</button>
+                        <Button
+                            className="button is-rounded is-small"
+                            renderAs="span"
+                            color="success"
+                            onClick={addToCart(props.product)}
+                            >
+                            +
+                        </Button>
                     </div>
                 </Columns.Column>
                 <Columns.Column>
