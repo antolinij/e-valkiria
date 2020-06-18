@@ -27,6 +27,7 @@ export const CartHeader = () => {
 export const CartButton = (props) => {
   const [state, dispatch] = useContext(CartContext)
 
+  const style = { textAlign: 'center' };
     /*
     let price = 0
     state.cart.map((product) => {
@@ -35,14 +36,16 @@ export const CartButton = (props) => {
     */
     if (state.cart.length){
         return (
-            <Button
-              className="button-cart"
-              renderAs="span"
-              color="success"
-              onClick={props.openCart}
-            >
-            ({state.quantityTotal}) REVISAR PEDIDO [${state.priceTotal}]
-          </Button>
+              <Button
+                className="button-cart"
+                style={style}
+                renderAs="span"
+                color="success"
+                onClick={props.openCart}
+                
+              >
+              ({state.quantityTotal}) REVISAR PEDIDO [${state.priceTotal}]
+            </Button>
         )
     }
     return ('')

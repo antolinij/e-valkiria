@@ -50,12 +50,6 @@ function ProductItem(props) {
                     <p>$100 x unidad</p>
                 </Columns.Column>
                 <Columns.Column>
-                <Button
-                    renderAs="span"
-                    color="success"
-                    onClick={foo}
-                >Hago Clic en Foo
-                </Button>
                     <div className="actions">
                         <button className="button is-rounded is-small" disabled={!props.product.quantity} onClick={() => removeToCart(props.product)}>-</button>
                         <small>{props.product.quantity?' '+props.product.quantity+' ':' 0 '}</small>
@@ -64,8 +58,8 @@ function ProductItem(props) {
                             renderAs="span"
                             onClick={() => addToCart(props.product)}
                         >
-                +
-                </Button>
+                            +
+                        </Button>
                     </div>
                 </Columns.Column>
                 <Columns.Column>
