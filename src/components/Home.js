@@ -28,8 +28,8 @@ export default function Home(props){
     }
     return (
         <CartContextProvider>
-            <NavBar openCart={drawerToggleClickHandler} />
             <SlideDrawer show={drawer} />
+            <NavBar openCart={drawerToggleClickHandler} />
             { backdrop }
             <HeaderBar/>
             <ProductList products={props.products}/>

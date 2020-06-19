@@ -15,11 +15,11 @@ import Backdrop from '../views/Backdrop';
 
 import '../static/sass/Cart.scss';
 
-export const CartHeader = () => {
+export const CartHeader = (props) => {
   const [state, dispatch] = useContext(CartContext)
   return (
     <div>
-        <div className="cartLength"><FaBeer />  en el carro: {state.quantityTotal} - $ {state.priceTotal}</div>
+        <Button onClick={props.openCart}><div className="cartLength"><FaBeer />  en el carro: {state.quantityTotal} - $ {state.priceTotal}</div></Button>
     </div>
   )
 }
@@ -28,12 +28,7 @@ export const CartButton = (props) => {
   const [state, dispatch] = useContext(CartContext)
 
   const style = { textAlign: 'center' };
-    /*
-    let price = 0
-    state.cart.map((product) => {
-      price += product.quantity * product.price
-    })
-    */
+
     if (state.quantityTotal){
         return (
               <Button
@@ -55,12 +50,18 @@ export const CartButton = (props) => {
 export const CartDrawer = () => {
     const [state, dispatch] = useContext(CartContext)
     const style = { textAlign: 'center' };
-    var pedido = "Hola! quería hacer un pedido =), este es el detalle: "
+
+    if (! state.quantityTotal ){
+      return (
+        <div>UPS!, NADA POR AQUÍ</div>
+      )
+    }
+    var pedido = "Hola Valkirianos! quería pedir lo siguiente: \n "
     
     state.cart.map((product)=>{
-      pedido += " " +product.quantity +" botella/s de "+ product.name + " - "
+      pedido += "*" +product.quantity +"* botella/s de *"+ product.name + "* \n "
     })
-    pedido += " Muchas gracias Salú "
+    pedido += "Muchas gracias!"
     
     let pedidoEncoded = encodeURI(pedido)
     
@@ -69,7 +70,7 @@ export const CartDrawer = () => {
     const rows = state.cart.map(( r, i ) => {
         return (
           <div className="listProducts" key={i}>
-            <List.Item key={i}>* Cerveza Estilo: {r.name} - Cantidad: {r.quantity} - Precio unit: $ {r.price} - Subtotal: $ {parseInt(r.price) * parseInt(r.quantity) }</List.Item>
+            <List.Item key={i}><li><bold>{r.quantity} unidad/es de {r.name}. </bold><br/><small>Valor c/u: $ {r.price} subtotal: $ {parseInt(r.price) * parseInt(r.quantity) }</small></li></List.Item>
           </div>
         ) 
       })
@@ -81,11 +82,11 @@ export const CartDrawer = () => {
                 {rows}
               </List>
               <List>
-              <List.Item >Vas a comprar: {state.quantityTotal} unidades - importe total: $ {state.priceTotal}</List.Item>
+              <List.Item >Total: {state.quantityTotal} unidad/es <br/> Importe total: $ {state.priceTotal}</List.Item>
               </List>
             </Box>
-            <span className="image-checkout">
-                <a target="_blank" href={uri}><FaWhatsapp/> PEDIR POR WHATSAPP</a>
+            <span className="wabutton">
+                <Button renderAs="span" color="success"><a target="_blank" href={uri} ><FaWhatsapp/> PEDIR POR WHATSAPP</a></Button>
             </span>
         </Section>  
     )

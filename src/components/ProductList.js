@@ -77,7 +77,7 @@
         const rows = props.products.map(( r, i ) => {
             keyharcoded ++
             return (
-                <Tile className="box" size={3} kind="child">
+                <Tile className="box" size={3} kind="child" key={i}>
                     <Columns style={style}>
                         <Columns.Column>
                             <Heading>{r.name}</Heading>

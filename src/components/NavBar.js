@@ -13,7 +13,7 @@ const NavBar = (props) => {
                     <img src="logo.png"/>
                 </Navbar.Item>
                 <Navbar.Item>
-                    <CartHeader/>
+                    <CartHeader openCart={props.openCart}/>
                 </Navbar.Item>
             </Navbar.Brand>
             <Navbar.Menu >
