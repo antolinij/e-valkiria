@@ -69,7 +69,7 @@ export const CartDrawer = () => {
     const rows = state.cart.map(( r, i ) => {
         return (
           <div className="listProducts" key={i}>
-            <List.Item key={i}>Cerveza Estilo: {r.name} - Cantidad: {r.quantity} - Precio: {r.price}</List.Item>
+            <List.Item key={i}>* Cerveza Estilo: {r.name} - Cantidad: {r.quantity} - Precio unit: $ {r.price} - Subtotal: $ {parseInt(r.price) * parseInt(r.quantity) }</List.Item>
           </div>
         ) 
       })
@@ -79,6 +79,9 @@ export const CartDrawer = () => {
             <Box>
               <List hoverable>
                 {rows}
+              </List>
+              <List>
+              <List.Item >Vas a comprar: {state.quantityTotal} unidades - importe total: $ {state.priceTotal}</List.Item>
               </List>
             </Box>
             <span className="image-checkout">
