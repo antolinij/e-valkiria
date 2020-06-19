@@ -3,8 +3,10 @@ import React, {useState, useContext, useEffect} from 'react';
 import SlideDrawer from './components/SlideDrawer';
 import HeaderBar from './components/HeaderBar';
 import Home from './components/Home';
+import Foo from './components/Foo';
 import NavBar from './components/NavBar';
 import Container from 'react-bulma-components/lib/components/container';
+import { CartContextProvider } from './context/CartContext';
 
 import axios from 'axios';
 
@@ -76,9 +78,11 @@ function App() {
   */
 
   return (
-    <div>
-      <Home products={data.products}/>
-    </div>
+    <CartContextProvider>
+      <div>
+        <Foo />
+      </div>
+    </CartContextProvider>
   );
 }
 
