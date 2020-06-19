@@ -8,6 +8,9 @@ import Container from 'react-bulma-components/lib/components/container';
 import Box from 'react-bulma-components/lib/components/box';
 import List from 'react-bulma-components/lib/components/list';
 
+import { Field, Control, Label, Input, Textarea, Select, Checkbox, Radio, Help, InputFile } from 'react-bulma-components/lib/components/form';
+
+
 import { FaBeer } from 'react-icons/fa';
 import { FaWhatsapp } from 'react-icons/fa';
 
@@ -19,7 +22,7 @@ export const CartHeader = (props) => {
   const [state, dispatch] = useContext(CartContext)
   return (
     <div>
-        <Button onClick={props.openCart}><div className="cartLength"><FaBeer />  en el carro: {state.quantityTotal} - $ {state.priceTotal}</div></Button>
+        <div className="cartLength" onClick={props.openCart}><FaBeer />  en el carro: {state.quantityTotal} - $ {state.priceTotal}</div>
     </div>
   )
 }
@@ -49,6 +52,7 @@ export const CartButton = (props) => {
 
 export const CartDrawer = () => {
     const [state, dispatch] = useContext(CartContext)
+    const [address, setAddress] = useState("");
     const style = { textAlign: 'center' };
 
     if (! state.quantityTotal ){
@@ -56,11 +60,18 @@ export const CartDrawer = () => {
         <div>UPS!, NADA POR AQUÍ</div>
       )
     }
+
+    const handleSubmit = (evt) => {
+      evt.preventDefault();
+      alert(`Submitting Name ${address}`)
+    }
+
     var pedido = "Hola Valkirianos! quería pedir lo siguiente: \n "
     
     state.cart.map((product)=>{
-      pedido += "*" +product.quantity +"* botella/s de *"+ product.name + "* \n "
+      pedido += "*" +product.quantity +"* botella/s de *"+ product.name + "* \n"
     })
+    pedido += "Mi domicilio es: " + address + "\n"
     pedido += "Muchas gracias!"
     
     let pedidoEncoded = encodeURI(pedido)
@@ -85,6 +96,9 @@ export const CartDrawer = () => {
               <List.Item >Total: {state.quantityTotal} unidad/es <br/> Importe total: $ {state.priceTotal}</List.Item>
               </List>
             </Box>
+            <Control>
+              <Input placeholder="domicilio de entrega" value={address} onChange={e => setAddress(e.target.value)}/>
+            </Control>
             <span className="wabutton">
                 <Button renderAs="span" color="success"><a target="_blank" href={uri} ><FaWhatsapp/> PEDIR POR WHATSAPP</a></Button>
             </span>

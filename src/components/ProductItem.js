@@ -44,7 +44,7 @@ function ProductItem(props) {
                     <Heading subtitle>{props.product.description}</Heading>
                 </Columns.Column>
             </Columns>
-            <Image src="birra.jpg" />
+            <Image src="aaa.HEIC" />
             <Columns style={style}>
                 <Columns.Column>
                     <p>$100 x unidad</p>

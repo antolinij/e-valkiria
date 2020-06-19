@@ -91,10 +91,16 @@
                         </Columns.Column>
                         <Columns.Column>
                             <div className="actions">
-                                <button className="button is-rounded is-small" disabled={!r.quantity} onClick={() => removeToCart(r)}>-</button>
-                                <small>{r.quantity?' '+r.quantity+' ':' 0 '}</small>
+                            <Button
+                                    className="button is-rounded is-medium buttonseparated"
+                                    renderAs="span"
+                                    onClick={() => removeToCart(r)}
+                                >
+                                    -
+                                </Button>
+                                <strong className="totaladded">{r.quantity?' '+r.quantity+' ':' 0 '}</strong>
                                 <Button
-                                    className="button is-rounded is-small"
+                                    className="button is-rounded is-medium buttonseparated"
                                     renderAs="span"
                                     onClick={() => addToCart(r)}
                                 >
