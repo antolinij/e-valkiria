@@ -100,7 +100,7 @@ function App() {
         <SlideDrawer show={drawer} />
         { backdrop }
         <HeaderBar/>
-        <Foo />
+        <Foo products={data.products}/>
         <CartButton openCart={drawerToggleClickHandler}/>    
       </div>
     </CartContextProvider>

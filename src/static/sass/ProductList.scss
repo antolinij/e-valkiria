@@ -5,7 +5,10 @@
 .tile.is-parent {
     margin-top: 1rem;
 }
-
+.foo{
+    flex-wrap: wrap;
+    margin: 20px;
+}
 .tile.is-child {
     margin-left: 4px;
 }
