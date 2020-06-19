@@ -9,7 +9,7 @@
     justify-content: center;
     @include mobile {
       margin: 0px;
-      width: 100%;
+      width: 80%;
       height: 100%;
     }
     @include from ($tablet) until($desktop) {
