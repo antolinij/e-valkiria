@@ -89,25 +89,27 @@
                         <Columns.Column>
                             <p>$100 x unidad</p>
                         </Columns.Column>
-                        <Columns.Column>
-                            <div className="actions">
-                            <Button
-                                    className="button is-rounded is-medium buttonseparated"
-                                    renderAs="span"
-                                    onClick={() => removeToCart(r)}
-                                >
-                                    -
-                                </Button>
-                                <strong className="totaladded">{r.quantity?' '+r.quantity+' ':' 0 '}</strong>
-                                <Button
-                                    className="button is-rounded is-medium buttonseparated"
-                                    renderAs="span"
-                                    onClick={() => addToCart(r)}
-                                >
-                                    +
-                                </Button>
-                            </div>
-                        </Columns.Column>
+                        <Columns className="btnAddUnit">
+                            <Columns.Column>
+                                    <Button
+                                            className="button is-rounded is-medium buttonseparated"
+                                            renderAs="span"
+                                            onClick={() => removeToCart(r)}
+                                        >
+                                            -
+                                    </Button>
+                            
+                                    <strong className="totaladded">{r.quantity?' '+r.quantity+' ':' 0 '}</strong>
+                            
+                                    <Button
+                                        className="button is-rounded is-medium buttonseparated"
+                                        renderAs="span"
+                                        onClick={() => addToCart(r)}
+                                    >
+                                        +
+                                    </Button>                            
+                                </Columns.Column>
+                            </Columns>
                         <Columns.Column>
                             <p className="bd-notification is-success"><small>*unidad referencia <br/> botella 500ml</small></p>
                         </Columns.Column>
