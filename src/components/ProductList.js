@@ -113,7 +113,7 @@
         return (
             <Tile kind="ancestor">
                 <Tile size={12}>
-                    <Tile className="foo" kind="parent">
+                    <Tile className="wrapProductTile" kind="parent">
                         {rows}
                     </Tile>
                 </Tile>

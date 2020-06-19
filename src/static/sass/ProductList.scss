@@ -1,14 +1,13 @@
-.tile {
-    overflow:hidden;
-  }
-  button {cursor: pointer;}
 .tile.is-parent {
     margin-top: 1rem;
 }
-.foo{
+.wrapProductTile{
     flex-wrap: wrap;
     margin: 20px;
+    padding: 15px;
+    overflow:hidden;
 }
 .tile.is-child {
     margin-left: 4px;
+    margin-right: 4px;
 }
