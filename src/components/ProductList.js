@@ -95,12 +95,11 @@
                                             className="button is-rounded is-medium buttonseparated"
                                             renderAs="span"
                                             onClick={() => removeToCart(r)}
+                                            disabled={!state.quantityTotal}
                                         >
                                             -
                                     </Button>
-                            
                                     <strong className="totaladded">{r.quantity?' '+r.quantity+' ':' 0 '}</strong>
-                            
                                     <Button
                                         className="button is-rounded is-medium buttonseparated"
                                         renderAs="span"
