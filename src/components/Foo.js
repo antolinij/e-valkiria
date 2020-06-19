@@ -12,6 +12,22 @@ import { CartContext } from '../context/CartContext';
 export default function ProductItem(props) {
     const [state, dispatch] = useContext(CartContext)
 
+    let addToCart = (product) => {
+        product.quantity += 1
+        dispatch({
+            type: 'ADD',
+            payload: {product: product}
+        })
+    }
+
+    const removeToCart = product => {
+        product.quantity -= 1
+        dispatch({
+            type: 'REMOVE',
+            payload: {product: product}
+        })
+    }
+
     const foo = () => {
         dispatch({
             type: 'FOO',
@@ -40,15 +56,17 @@ export default function ProductItem(props) {
                                 <p>$100 x unidad</p>
                             </Columns.Column>
                             <Columns.Column>
-                                <div className="actions">
-                                    <Button
-                                        className="button is-rounded is-small"
-                                        renderAs="span"
-                                        onClick={foo}
-                                    >
-                                        +
-                                    </Button>
-                                </div>
+                            <div className="actions">
+                                <button className="button is-rounded is-small" disabled={!state.quantityTotal} onClick={() => removeToCart({'id': 1, 'name': 'GOlden'})}>-</button>
+                                <small>{state.quantityTotal?' '+state.quantityTotal+' ':' 0 '}</small>
+                                <Button
+                                    className="button is-rounded is-small"
+                                    renderAs="span"
+                                    onClick={() => addToCart({'id': 1, 'name': 'GOlden'})}
+                                >
+                                    +
+                                </Button>
+                            </div>
                             </Columns.Column>
                             <Columns.Column>
                                 <p className="bd-notification is-success"><small>*unidad referencia <br/> botella 500ml</small></p>
@@ -69,15 +87,17 @@ export default function ProductItem(props) {
                                 <p>$100 x unidad</p>
                             </Columns.Column>
                             <Columns.Column>
-                                <div className="actions">
-                                    <Button
-                                        className="button is-rounded is-small"
-                                        renderAs="span"
-                                        onClick={foo}
-                                    >
-                                        +
-                                    </Button>
-                                </div>
+                            <div className="actions">
+                                <button className="button is-rounded is-small" disabled={!state.quantityTotal} onClick={() => removeToCart({'id': 1, 'name': 'GOlden'})}>-</button>
+                                <small>{state.quantityTotal?' '+state.quantityTotal+' ':' 0 '}</small>
+                                <Button
+                                    className="button is-rounded is-small"
+                                    renderAs="span"
+                                    onClick={() => addToCart({'id': 1, 'name': 'GOlden'})}
+                                >
+                                    +
+                                </Button>
+                            </div>
                             </Columns.Column>
                             <Columns.Column>
                                 <p className="bd-notification is-success"><small>*unidad referencia <br/> botella 500ml</small></p>
