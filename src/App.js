@@ -94,16 +94,9 @@ function App() {
   */
 
   return (
-    <CartContextProvider>
-      <div>
-        <NavBar openCart={drawerToggleClickHandler} />
-        <SlideDrawer show={drawer} />
-        { backdrop }
-        <HeaderBar/>
-        <Foo products={data.products}/>
-        <CartButton openCart={drawerToggleClickHandler}/>    
-      </div>
-    </CartContextProvider>
+    <div>
+      <Home products={data.products}/>
+    </div>
   );
 }
 
