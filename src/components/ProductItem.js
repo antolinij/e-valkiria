@@ -37,7 +37,7 @@ function ProductItem(props) {
 
     const style = { textAlign: 'center' }
    return (
-        <Tile className="box" size={3} renderAs="article" kind="child">
+        <Tile className="box" size={3} kind="child">
             <Columns style={style}>
                 <Columns.Column>
                     <Heading>{props.product.name}</Heading>

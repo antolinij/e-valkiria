@@ -73,10 +73,40 @@
     
         const style = { textAlign: 'center' }
 
+        let keyharcoded = 0
         const rows = props.products.map(( r, i ) => {
             keyharcoded ++
             return (
-                <ProductItem product={r} key={keyharcoded}></ProductItem>
+                <Tile className="box" size={3} kind="child">
+                    <Columns style={style}>
+                        <Columns.Column>
+                            <Heading>{r.name}</Heading>
+                            <Heading subtitle>{r.description}</Heading>
+                        </Columns.Column>
+                    </Columns>
+                    <Image src="birra.jpg" />
+                    <Columns style={style}>
+                        <Columns.Column>
+                            <p>$100 x unidad</p>
+                        </Columns.Column>
+                        <Columns.Column>
+                            <div className="actions">
+                                <button className="button is-rounded is-small" disabled={!r.quantity} onClick={() => removeToCart(r)}>-</button>
+                                <small>{r.quantity?' '+r.quantity+' ':' 0 '}</small>
+                                <Button
+                                    className="button is-rounded is-small"
+                                    renderAs="span"
+                                    onClick={() => addToCart(r)}
+                                >
+                                    +
+                                </Button>
+                            </div>
+                        </Columns.Column>
+                        <Columns.Column>
+                            <p className="bd-notification is-success"><small>*unidad referencia <br/> botella 500ml</small></p>
+                        </Columns.Column>
+                    </Columns>
+                </Tile>
             ) 
         })
 
