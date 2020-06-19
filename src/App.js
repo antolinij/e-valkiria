@@ -7,6 +7,7 @@ import Foo from './components/Foo';
 import NavBar from './components/NavBar';
 import Container from 'react-bulma-components/lib/components/container';
 import { CartContextProvider } from './context/CartContext';
+import Backdrop from './views/Backdrop';
 
 import axios from 'axios';
 
@@ -69,6 +70,15 @@ function App() {
   const drawerToggleClickHandler = () => {
       setDrawer( !drawer )
     }
+
+    const backdropClickHandler = () => {
+      setDrawer( false )
+  }
+  
+  if(drawer){
+      backdrop = <Backdrop close={backdropClickHandler} />;
+  }
+
   /*
   useEffect(() => {
     const fetchData = async () => {
@@ -86,6 +96,10 @@ function App() {
   return (
     <CartContextProvider>
       <div>
+        <NavBar openCart={drawerToggleClickHandler} />
+        <SlideDrawer show={drawer} />
+        { backdrop }
+        <HeaderBar/>
         <Foo />
         <CartButton openCart={drawerToggleClickHandler}/>    
       </div>
