@@ -34,7 +34,7 @@ export const CartButton = (props) => {
       price += product.quantity * product.price
     })
     */
-    if (state.cart.length){
+    if (state.quantityTotal){
         return (
               <Button
                 className="button-cart"

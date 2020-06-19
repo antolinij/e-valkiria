@@ -62,7 +62,13 @@ function App() {
       },
     ] 
   });
-  
+  const [drawer, setDrawer] = useState(false);
+    
+  let backdrop;
+
+  const drawerToggleClickHandler = () => {
+      setDrawer( !drawer )
+    }
   /*
   useEffect(() => {
     const fetchData = async () => {
@@ -81,6 +87,7 @@ function App() {
     <CartContextProvider>
       <div>
         <Foo />
+        <CartButton openCart={drawerToggleClickHandler}/>    
       </div>
     </CartContextProvider>
   );
