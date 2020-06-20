@@ -53,19 +53,13 @@ export const CartButton = (props) => {
 export const CartDrawer = () => {
     const [state, dispatch] = useContext(CartContext)
     const [address, setAddress] = useState("");
-    const style = { textAlign: 'center' };
+    const style = { textAlign: 'center'};
 
     if (! state.quantityTotal ){
       return (
         <div>UPS!, NADA POR AQUÍ</div>
       )
     }
-
-    const handleSubmit = (evt) => {
-      evt.preventDefault();
-      alert(`Submitting Name ${address}`)
-    }
-
     var pedido = "Hola Valkirianos! quería pedir lo siguiente: \n "
     
     state.cart.map((product)=>{
@@ -86,7 +80,7 @@ export const CartDrawer = () => {
         ) 
       })
     return (
-        <Section style={style}>
+        <Section className="listItems" style={style}>
             <strong>TU PEDIDO ( {state.quantityTotal} ) <br/> </strong>
             <Box>
               <List hoverable>
@@ -96,8 +90,8 @@ export const CartDrawer = () => {
               <List.Item >Total: {state.quantityTotal} unidad/es <br/> Importe total: $ {state.priceTotal}</List.Item>
               </List>
             </Box>
-            <Control>
-              <Input placeholder="domicilio de entrega" value={address} onChange={e => setAddress(e.target.value)}/>
+            <Control style={style}>
+              <Input className="heightInputText" placeholder="Domicilio de entrega" value={address} onChange={e => setAddress(e.target.value)}/>
             </Control>
             <span className="wabutton">
                 <Button renderAs="span" color="success"><a target="_blank" href={uri} ><FaWhatsapp/> PEDIR POR WHATSAPP</a></Button>

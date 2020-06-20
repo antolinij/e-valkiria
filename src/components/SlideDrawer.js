@@ -14,6 +14,7 @@ const SlideDrawer = (props) => {
        const style = { textAlign: 'center' };
        if(props.show) {
           drawerClasses = 'side-drawer open has-text-centered'
+          document.body.classList.add('sidedraweropen');
             return(
                 <div className={drawerClasses}>
                     <Image className="image-checkout" rounded={boolean('rounded', true)} size={64} alt="64x64" src="valkirialogo.jpg" />

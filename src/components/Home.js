@@ -20,6 +20,7 @@ export default function Home(props){
       }
     
     const backdropClickHandler = () => {
+        document.body.classList.remove('sidedraweropen');
         setDrawer( false )
     }
     
