@@ -1,7 +1,7 @@
 @import "bulma/sass/utilities/mixins";
 .postionSocialButton{ 
     @include until($desktop) {
-        margin-left: 5%;
+        margin-left: 25%;
     }
     @include from($tablet) {
         margin-top: 30px;
