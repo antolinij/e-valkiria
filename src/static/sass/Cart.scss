@@ -7,7 +7,7 @@
     bottom: 20px;
 
     @include until($desktop) {
-        left: 30%;
+        left: 26%;
     }
     @include from($tablet) {
         left: 45%;
