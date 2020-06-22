@@ -12,8 +12,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-body{
-  
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 .App-header {
   background-color: #282c34;
