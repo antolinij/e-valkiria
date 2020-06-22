@@ -35,7 +35,8 @@ export const CartButton = (props) => {
 
     if (state.quantityTotal){
         return (
-              <Button
+          <div className="content has-text-centered">
+            <Button
                 className="button-cart"
                 style={style}
                 renderAs="span"
@@ -45,6 +46,8 @@ export const CartButton = (props) => {
               >
               ({state.quantityTotal}) REVISAR PEDIDO [${state.priceTotal}]
             </Button>
+          </div>
+              
         )
     }
     return ('')
