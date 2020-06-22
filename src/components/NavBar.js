@@ -1,13 +1,13 @@
 import React from 'react'
-import '../static/sass/NavBar.scss'
-import Navbar from 'react-bulma-components/lib/components/navbar';
 
+import Navbar from 'react-bulma-components/lib/components/navbar';
+import '../static/sass/NavBar.scss'
 import { select, boolean } from '@storybook/addon-knobs';
 import { CartHeader, CartButton} from './Cart';
 
 const NavBar = (props) => {
     return(
-        <Navbar fixed="top">
+        <Navbar className="navBarQRMarket" fixed="top">
             <Navbar.Brand>
                 <Navbar.Item>
                     <img src="logo.png"/>

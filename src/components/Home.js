@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import SlideDrawer from '../components/SlideDrawer';
 import HeaderBar from '../components/HeaderBar';
 import ProductList from '../components/ProductList';
+import Footer from '../components/Footer';
 
 import Backdrop from '../views/Backdrop';
 
@@ -36,15 +37,8 @@ export default function Home(props){
                 <HeaderBar/>
                 <ProductList products={props.products}/>
                 <CartButton openCart={drawerToggleClickHandler}/> 
-            </CartContextProvider>
-            <footer class="footer">
-                <div class="content has-text-centered">
-                    <p>
-                    hecho con mucho &#128154; en epocas de pandemia<br/>
-                    visitar: <a href="www.qrmarket.com.ar">Qr Market (2020)</a>
-                    </p>
-                </div>  
-            </footer>   
+            </CartContextProvider>  
+            <Footer/>
         </div>
     )
 }

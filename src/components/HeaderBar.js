@@ -15,6 +15,9 @@ import Section from 'react-bulma-components/lib/components/section';
 import { boolean } from '@storybook/addon-knobs';
 
 import '../static/css/HeaderBar.css'
+import '../static/sass/HeaderBar.scss'
+
+import { FaFacebookSquare, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const HeaderBar = (props) => {
     const style = { textAlign: 'center' };
@@ -34,18 +37,24 @@ const HeaderBar = (props) => {
                         <p>
                             La Fabrica
                         </p>
+                        {/* 
+                        Boton para filtrar TODO
+
                         <Columns style={style}>
                             <Columns.Column>
                                 <Container className="filterProducts">
-                                    <Button>un boton</Button><Button>un boton</Button>
+                                    <Button></Button><Button>un boton</Button>
                                 </Container>
                             </Columns.Column>
                         </Columns>
+                        */}
                     </Media.Item>
-                    <Columns style={style}>
+                    <Columns className="postionSocialButton" style={style}>
                             <Columns.Column>
                                 <Container>
-                                    <Button>un boton</Button><Button>un boton</Button>
+                                    <a class="button" target="_blank" href="https://www.facebook.com/cervezavalkiria"><FaFacebookSquare size={28}/></a>
+                                    <a class="button" target="_blank" href="https://www.instagram.com/valkiria_birra/"><FaInstagram size={28}/></a>
+                                    <a class="button" target="_blank" href="https://api.whatsapp.com/send?phone=5492665030860&text="><FaWhatsapp size={28}/></a>
                                 </Container>
                             </Columns.Column>
                         </Columns>

@@ -12,7 +12,8 @@ import { Field, Control, Label, Input, Textarea, Select, Checkbox, Radio, Help, 
 
 
 import { FaBeer } from 'react-icons/fa';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaShoppingCart } from 'react-icons/fa';
+
 
 import Backdrop from '../views/Backdrop';
 
@@ -22,7 +23,7 @@ export const CartHeader = (props) => {
   const [state, dispatch] = useContext(CartContext)
   return (
     <div>
-        <div className="cartLength" onClick={props.openCart}><FaBeer />  en el carro: {state.quantityTotal} - $ {state.priceTotal}</div>
+        <div className="cartLength" onClick={props.openCart}><FaShoppingCart /> ({state.quantityTotal}) <strong>$ {state.priceTotal}</strong></div>
     </div>
   )
 }

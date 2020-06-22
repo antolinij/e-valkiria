@@ -1,6 +1,5 @@
     import React, { useContext } from 'react'
     import ProductItem from './ProductItem'
-    import '../static/sass/ProductList.scss'
     import { Tile } from 'react-bulma-components'
     import { CartContext } from '../context/CartContext';
 
@@ -9,6 +8,8 @@
     import Columns from 'react-bulma-components/lib/components/columns';
     import Button from 'react-bulma-components/lib/components/button';
 
+    import '../static/sass/ProductList.scss'
+    
     Object.defineProperty(Array.prototype, 'chunk_inefficient', {
         value: function(chunkSize) {
             var array = this;
@@ -77,7 +78,7 @@
         const rows = props.products.map(( r, i ) => {
             keyharcoded ++
             return (
-                <Tile className="box" size={3} kind="child" key={i}>
+                <Tile className="box tileProductList" size={3} kind="child" key={i}>
                     <Columns style={style}>
                         <Columns.Column>
                             <Heading>{r.name}</Heading>
@@ -95,7 +96,7 @@
                                             className="button is-rounded is-medium buttonseparated"
                                             renderAs="span"
                                             onClick={() => removeToCart(r)}
-                                            disabled={!state.quantityTotal}
+                                            disabled={!r.quantity}
                                         >
                                             -
                                     </Button>
