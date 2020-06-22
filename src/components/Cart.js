@@ -94,7 +94,7 @@ export const CartDrawer = () => {
               <Input className="heightInputText" placeholder="Domicilio de entrega" value={address} onChange={e => setAddress(e.target.value)}/>
             </Control>
             <span className="wabutton">
-                <Button renderAs="span" color="success"><a target="_blank" href={uri} ><FaWhatsapp/> PEDIR POR WHATSAPP</a></Button>
+                <Button renderAs="span" color="success"><a className="wa" target="_blank" href={uri} ><FaWhatsapp/> PEDIR POR WHATSAPP</a></Button>
             </span>
         </Section>  
     )

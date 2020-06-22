@@ -28,13 +28,23 @@ export default function Home(props){
         backdrop = <Backdrop close={backdropClickHandler} />;
     }
     return (
-        <CartContextProvider>
-            <SlideDrawer show={drawer} />
-            <NavBar openCart={drawerToggleClickHandler} />
-            { backdrop }
-            <HeaderBar/>
-            <ProductList products={props.products}/>
-            <CartButton openCart={drawerToggleClickHandler}/>    
-        </CartContextProvider>
+        <div>
+            <CartContextProvider>
+                <SlideDrawer show={drawer} />
+                <NavBar openCart={drawerToggleClickHandler} />
+                { backdrop }
+                <HeaderBar/>
+                <ProductList products={props.products}/>
+                <CartButton openCart={drawerToggleClickHandler}/> 
+            </CartContextProvider>
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>
+                    hecho con mucho &#128154; en epocas de pandemia<br/>
+                    visitar: <a href="www.qrmarket.com.ar">Qr Market (2020)</a>
+                    </p>
+                </div>  
+            </footer>   
+        </div>
     )
 }

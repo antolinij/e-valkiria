@@ -13,10 +13,10 @@
         left: 40%;
     }
 }
-a{
+a.wa{
     color: white;
 }
-a:hover{
+a.wa:hover{
     color: white;
 }
 .wabutton{
@@ -35,7 +35,7 @@ a:hover{
     @include from($tablet) {
         bottom: 10%;
     }
-    margin-bottom: 80px;
+    margin-bottom: 0px;
     margin-top: 10px;
 }
 
