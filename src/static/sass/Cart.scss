@@ -35,6 +35,8 @@ a:hover{
     @include from($tablet) {
         bottom: 10%;
     }
+    margin-bottom: 80px;
+    margin-top: 10px;
 }
 
 .listProducts{
