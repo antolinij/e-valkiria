@@ -8,6 +8,7 @@ import NavBar from './components/NavBar';
 import Container from 'react-bulma-components/lib/components/container';
 import { CartContextProvider } from './context/CartContext';
 import Backdrop from './views/Backdrop';
+import {Helmet} from "react-helmet";
 
 import axios from 'axios';
 
@@ -95,6 +96,11 @@ function App() {
 
   return (
     <div>
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>QR Market Tienda online deValkiria </title>
+          <link rel="canonical" href="https://valkiria.qrmarket.com.ar" />
+      </Helmet>
       <Home products={data.products}/>
     </div>
   );
