@@ -24,30 +24,39 @@ const HeaderBar = (props) => {
             <Card.Image size="3by1" src="valkiria.jpg" />
             <Card.Content>
                 <Media>
-                <Media.Item className="tttt" renderAs="figure" position="left">
-                    <Image rounded={boolean('rounded', true)} size={64} alt="64x64" src="valkirialogo.jpg" />
-                </Media.Item>
-                <Media.Item position="left">
-                    <p>
-                        <strong>Valkiria La Fabrica</strong>
-                    </p>
-                    <p>
-                        <strong>Valkiria La Fabrica</strong>
-                    </p>
-                    <p>
-                        <div>hola marico</div>
-                    </p>
-                </Media.Item>
-                <div className="socialnetworks">
+                    <Media.Item className="tttt" renderAs="figure" position="left">
+                        <Image rounded={boolean('rounded', true)} size={64} alt="64x64" src="valkirialogo.jpg" />
+                    </Media.Item>
+                    <Media.Item position="left">
+                        <p>
+                            <strong>Valkiria</strong>
+                        </p>
+                        <p>
+                            La Fabrica
+                        </p>
+                        <Columns style={style}>
+                            <Columns.Column>
+                                <Container className="filterProducts">
+                                    <Button>un boton</Button><Button>un boton</Button>
+                                </Container>
+                            </Columns.Column>
+                        </Columns>
+                    </Media.Item>
                     <Columns style={style}>
-                        <Columns.Column>
-                            <Button>un boton</Button><Button>un boton</Button> <Button>un boton</Button>
-                        </Columns.Column>
-                    </Columns>
-                </div>
+                            <Columns.Column>
+                                <Container>
+                                    <Button>un boton</Button><Button>un boton</Button>
+                                </Container>
+                            </Columns.Column>
+                        </Columns>
                 </Media>
             </Card.Content>
             </Card>
+            <Hero>
+                <Hero.Body>
+                    ENVÍOS HASTA LAS 19hs
+                </Hero.Body>
+            </Hero>
         </Section>
     )
 }

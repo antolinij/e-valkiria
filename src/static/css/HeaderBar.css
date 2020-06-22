@@ -9,5 +9,21 @@
 }
 .socialnetworks{
     position: relative;
-    left: 5%;
+}
+.hero-body {
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 1rem;
+    color: green;
+    background-color:#D5F5E3;
+    text-align: center;
+    border: 1px solid transparent;
+    border-color: transparent;
+    font-size: 1rem;
+}
+.filterProducts{
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    left: -50%;
 }
