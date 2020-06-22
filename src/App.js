@@ -100,6 +100,7 @@ function App() {
           <meta charSet="utf-8" />
           <title>QR Market Tienda online deValkiria </title>
           <link rel="canonical" href="https://valkiria.qrmarket.com.ar" />
+          <meta property="og:image" itemProp="image" content={'valkirialogo.jpg'}/>
       </Helmet>
       <Home products={data.products}/>
     </div>
