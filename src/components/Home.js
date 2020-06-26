@@ -2,14 +2,17 @@ import React, {useState, useContext} from 'react';
 
 import NavBar from '../components/NavBar';
 import SlideDrawer from '../components/SlideDrawer';
-import HeaderBar from '../components/HeaderBar';
 import ProductList from '../components/ProductList';
 import Footer from '../components/Footer';
 import {Helmet} from "react-helmet";
 import Backdrop from '../views/Backdrop';
+import Section from 'react-bulma-components/lib/components/section';
+
+
 
 import { CartContextProvider } from '../context/CartContext';
 import { CartHeader, CartButton} from '../components/Cart';
+import BrandInfo from './BrandInfo';
 
 export default function Home(props){
     const [drawer, setDrawer] = useState(false);
@@ -38,10 +41,12 @@ export default function Home(props){
             <CartContextProvider>
                 <SlideDrawer show={drawer} />
                 <NavBar openCart={drawerToggleClickHandler} />
-                { backdrop }
-                <HeaderBar/>
-                <ProductList products={props.products}/>
-                <CartButton openCart={drawerToggleClickHandler}/> 
+                <Section>
+                    { backdrop }
+                    <BrandInfo/>
+                    <ProductList products={props.products}/>
+                    <CartButton openCart={drawerToggleClickHandler}/> 
+                </Section>
             </CartContextProvider>  
             <Footer/>
         </div>

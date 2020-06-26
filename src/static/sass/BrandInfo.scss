@@ -1,0 +1,121 @@
+@import "bulma/sass/utilities/mixins";
+
+.tileAncestor{
+    margin-bottom: -6.5rem !important;
+}
+
+.brandImage{
+    position: absolute;
+    @include until($desktop) {
+        top: -18px;
+    }
+    @include from($tablet) {
+        top: -8px;
+    }
+    
+    left: 40px;
+    padding: 2px;
+    background: #fff;
+    border-radius: 100%;
+}
+.tile.is-child.brandNameContainer {
+    margin-top: -2% !important;
+    margin-left: 2% !important;
+    margin-right: 2% !important;
+    height: 5px !important;
+    font-size: medium;
+}
+.boxBrand{
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -12px;
+}
+.brandName{
+
+}
+.brandNameHeader {
+    position: relative;
+    left: 90px;
+    top: -15px;
+    color: black;
+    font-size: 1.2rem;
+}
+.brandNameBody {
+    position: relative;
+    left: 90px;
+    top: -15px;
+    color: #A0A0C0;
+    font-size: 0.8rem;
+}
+.tile.is-child.brandData {
+    margin: 10px !important;
+}
+.tile.is-child.brandSocial {
+    margin-top: -3% !important;
+    margin-left: 2% !important;
+    margin-right: 2% !important;
+    @include until($desktop) {
+        margin-bottom: 50px !important;
+    }
+    @include from($tablet) {
+        
+    }
+    
+    height: 8px !important;
+}
+
+.boxBrandData{
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+    @include until($desktop) {
+        margin-left: 20px;
+        margin-top: -70px;
+    }
+    @include from($tablet) {
+        margin-left: -30px;
+        margin-top: -12px;
+    }
+    margin-right: 20px;
+    
+}
+.boxBrandSocial{
+    position: relative;
+    @include until($desktop) {
+        margin-left: 30px;
+        margin-top: -45px;
+        margin-right: 50%;
+    }
+    @include from($tablet) {
+    }
+    margin-top: -12px;
+    margin-left: 100px;
+}
+
+.socialButtons{
+    position: relative;
+    @include until($desktop) {
+        left: 15px;
+        top: -25px;
+    }
+    @include from($tablet) {
+        left: 8px;
+        top: 13px;
+    }
+}
+
+.separator{
+    @include until($desktop) {
+        padding: 1.5rem;
+        margin-right: 10px;
+    }
+    @include from($tablet) {
+        padding: 1rem;
+        margin-right: 10px;
+    }
+}
+
+.textDataInLine{
+    margin-top: -2px;
+}

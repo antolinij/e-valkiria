@@ -7,6 +7,7 @@
     import Image from 'react-bulma-components/lib/components/image';
     import Columns from 'react-bulma-components/lib/components/columns';
     import Button from 'react-bulma-components/lib/components/button';
+    import Box from 'react-bulma-components/lib/components/box';
 
     import '../static/sass/ProductList.scss'
     
@@ -119,7 +120,7 @@
         })
 
         return (
-            <Tile kind="ancestor">
+            <Tile className="tileAncestor" kind="ancestor">
                 <Tile size={12}>
                     <Tile className="wrapProductTile" kind="parent">
                         {rows}
